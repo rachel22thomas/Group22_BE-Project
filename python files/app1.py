@@ -52,8 +52,8 @@ def cool_form():
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'reuben52'
-app.config['MYSQL_DB'] = 'geeklogin'
+app.config['MYSQL_PASSWORD'] = #add your password
+app.config['MYSQL_DB'] = ''
 
 mysql = MySQL(app)
 
