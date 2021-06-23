@@ -1,0 +1,122 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Login </title>
+        <style>
+        /* Store this code in 'style.css' file inside the 'static' folder*/
+
+.header {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 25px;
+            background-color: white;
+            font-family: 'Lato', 'sans-serif';
+            font-weight: 300;
+            text-align: center;
+            color: black;
+            margin: 0px;
+            border: 1px solid #2b2e4a;
+            text-decoration:underline;
+            
+
+
+        }
+
+
+.border {
+            padding: 15px 0px;
+            width: 600px;
+            height: 400px;
+            border: 1px;
+            border-radius: 0px;
+            background-color:#2b2e4a;
+    margin-top: 80px;
+
+        }
+
+.btn {
+    padding: 10px 40px;
+    background-color: white;
+    color: black;
+    font-family: 'Lato';
+    font-weight: 400;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-size: 15px;
+}
+.word{
+    padding: 40px;
+    margin: 0px;
+}
+.textbox{
+    padding: 10px 60px;
+    background-color: white;
+    border-radius: 10px;
+    border-color: white;
+    border: 2px solid black;
+    color: black;
+
+}
+    
+::placeholder {
+    color: black;
+    opacity: 1;
+    font-weight: 100;
+}
+
+
+.bottom{
+    color: white;
+    font-style: oblique;
+    font-weight: bold;
+}
+ 
+
+#username, #password,#email{
+    font-family: 'Lato';
+    text-align: center;
+    color: black;
+    font-style: normal;
+}
+
+
+.btn:hover{
+    background-color: #2b2e4a;
+    color: white;
+    border: 1px solid white;
+}
+
+a:hover{
+color: #2b2e4a;
+    background-color: white;
+    
+}
+       
+        </style>
+
+	</head>
+	<body>
+		<div align="center">
+		<div align="center" class="border">
+            <div class="header">Sign In</div>
+			
+            <h2 class="word"></h2>
+				<form action="{{ url_for('login') }}" method="post">
+					<input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/>
+                    
+					<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+					<input type="submit" class="btn" value="Sign In">
+				</form>
+            <br>
+
+			<p class="bottom">Dont't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+		</div>
+		</div>
+	</body>
+</html>

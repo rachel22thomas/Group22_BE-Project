@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drowsiness Detection System</title>
+    <link rel="icon" href="../static/assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+    <link rel="stylesheet" href="../static/assets/card_style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style type="text/css">
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-size: 16px;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            line-height: 1.8em;
+            color: #666;
+        }
+
+
+        .pimg1 {
+            position: relative;
+            opacity: 10;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            /*
+		    fixed = parallax
+		    scroll = normal
+		  */
+            background-attachment: fixed;
+        }
+
+        .pimg1 {
+            background: linear-gradient(rgba(17, 37, 219, 0.37), rgba(255, 255, 255, 0.096)), url("../static/assets/bg2.gif");
+            background-repeat: no-repeat;
+            min-height: 100%;
+            background-size: cover;
+        }
+
+
+
+        .section {
+            text-align: center;
+            padding: 50px 80px;
+        
+        }
+
+        .section-light {
+            background-color: #f4f4f4;
+            color: #666;
+        }
+
+        .section-dark {
+            background-image: linear-gradient(120deg, rgb(16, 6, 39), rgb(62, 77, 143));
+            color: #ddd;
+        }
+
+
+        @media(max-width:568px) {
+
+            .pimg1,
+            .pimg2,
+            .pimg3 {
+                background-attachment: scroll;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .container1 {
+            position: absolute;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .title {
+            font-weight: 800;
+            color: rgb(235, 234, 227);
+            font-size: 55px;
+            background: url("../static/assets/bg2.gif") repeat;
+            background-position: 40% 50%;
+            -webkit-background-clip: text;
+            position: relative;
+            text-align: center;
+            line-height: 90px;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            display: block;
+            font-weight: bolder;
+            font-size: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            padding-top: 10px;
+            color: rgba(165, 168, 172, 0.9);
+        }
+
+        /* ================ AbOUT PROJECT ================ */
+
+        
+        .proj-description{
+            text-align: justify;
+            text-justify: inter-word;
+            padding-left: 26px;
+            padding-right: 26px;
+            padding-top: 10px;
+            border: 1px dotted #666;
+            border-radius: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+
+        /*=== Pen styling, ignore*/
+
+        .text-effect {
+            flex: 0 1 0;
+            text-align: center;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Add a black background color to the top navigation */
+        .topnav {
+            background-color: rgb(255, 255, 255);
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color:#666;
+            color: white;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            color: black;
+        }
+        
+        /* ========================= Footer =======================*/
+    .footer-clean {
+  padding:50px 0;
+  background-color:#fff;
+  color:#4b4c4d;
+}
+
+.footer-clean h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-clean ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-clean ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-clean ul a:hover {
+  opacity:1;
+}
+
+.footer-clean .item.social {
+  text-align:right;
+}
+
+@media (max-width:767px) {
+  .footer-clean .item {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item.social {
+    text-align:center;
+  }
+}
+
+.footer-clean .item.social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin-left:10px;
+  margin-top:22px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-clean .item.social > a:hover {
+  opacity:0.9;
+}
+
+@media (max-width:991px) {
+  .footer-clean .item.social > a {
+    margin-top:40px;
+  }
+}
+
+@media (max-width:767px) {
+  .footer-clean .item.social > a {
+    margin-top:10px;
+  }
+}
+
+.footer-clean .copyright {
+  margin-top:14px;
+  margin-bottom:0;
+  font-size:13px;
+  opacity:0.6;
+}
+                /* =========================End of css =======================*/
+
+        
+    </style>
+</head>
+<div class="topnav">
+    
+    <a href="#home">Contact Us</a>
+    <a href="/login">Sign In </a>
+    <a href="/register">Register</a>
+    <a href="#about">About Us</a>
+</div>
+
+<body>
+    <div class="pimg1">
+        <div class="container1">
+
+
+            <div class="title">DROWSINESS DETECTION SYSTEM</div>
+            <div class="subtitle"> The best drivers are aware that they must be beware. </div>
+
+        </div>
+    </div>
+    <br>
+    
+    <section class="about-proj-main">
+    <div id="about">
+    <p class="about-proj-title "> About Our Project</p>
+        <br>
+        <p class="proj-description">
+        Many drivers in the country sacrifice sleep, an often overlooked and dangerous behaviour that results in majority of them being sleep-deprived while behind the wheel every day. 
+        Sleepiness decreases our vigilance, response time, memory and decision making which are all essential ingredients of safe driving. <br>
+        Compared to a breath analyzer used to detect drunk driving we have no definitive detection system for drowsiness which is a clear drawback in treating drowsiness as an offense by law. 
+        Hence, with the help of Computer Vision techniques, we have created a system that monitors the driver and notifies him to wake up when he is drowsy.
+        </p>
+				 
+
+    </div>
+        <br>
+    </section>
+<p class="meet-creators">Meet The Creators</p>
+    <br>
+  <div class="wrapper-flex">
+    <div class="container">
+      <div class='banner-img'></div>
+      <img src='../static/assets/lavin%20reszie.jpg' alt='profile image' class="profile-img">
+      <h1 class="name">Lavin Peeyus</h1>
+      <p class="description">B.E. - IT, DBIT</p>
+    </div>
+
+    <div class="container">
+      <div class='banner-img'></div>
+      <img src='../static/assets/rachel%20resize.jpg' alt='profile image' class="profile-img">
+        <br>
+        <br>
+      <p class="name">Rachel John</p>
+        
+      <p class="description">B.E. - IT, DBIT</p>
+    </div>
+
+    <div class="container">
+      <div class='banner-img'></div>
+      <img src='../static/assets/lisha%20resize.jpg' alt='profile image' class="profile-img">
+        <br>
+        <br>
+      <p class="name">Lisha Shaji</p>
+      <p class="description">B.E. - IT, DBIT</p>
+    </div>
+    </div>
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="#">Project</a></li>
+                            <li><a href="#">Our Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Help</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">FAQ's</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright">Drowsiness Detection System © 2021</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+                          
+               // Select all links with hashes
+            $('a[href*="#"]')
+              // Remove links that don't actually link to anything
+              .not('[href="#"]')
+              .not('[href="#0"]')
+              .click(function(event) {
+                // On-page links
+                if (
+                  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+                  && 
+                  location.hostname == this.hostname
+                ) {
+                  // Figure out element to scroll to
+                  var target = $(this.hash);
+                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                  // Does a scroll target exist?
+                  if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                      scrollTop: target.offset().top
+                    }, 1000, function() {
+                      // Callback after animation
+                      // Must change focus!
+                      var $target = $(target);
+                      $target.focus();
+                      if ($target.is(":focus")) { // Checking if the target was focused
+                        return false;
+                      } else {
+                        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                        $target.focus(); // Set focus again
+                      };
+                    });
+                  }
+                }
+              });           
+
+                          
+                          
+                          
+        });
+   
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+    </html>
